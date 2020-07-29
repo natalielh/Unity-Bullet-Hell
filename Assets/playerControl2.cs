@@ -5,7 +5,7 @@ public class playerControl2 : MonoBehaviour {
 
     public GameObject cam;
     public float speed = 8.0f;
-    float rotSpeed = 0.3f;
+    float rotSpeed = 100.0f;
     bool camToggleOn = false;
 
 	// Use this for initialization
@@ -52,7 +52,7 @@ public class playerControl2 : MonoBehaviour {
         if (Input.GetKey(KeyCode.E)) { toRot = -1; }
         if (Input.GetKey(KeyCode.Q)) { toRot = 1; }
 
-        transform.Rotate(0, 0, toRot * rotSpeed, Space.Self);
+        transform.Rotate(0, 0, toRot * rotSpeed * Time.deltaTime, Space.Self);
 
         Vector2 toMove = new Vector2(horizontalInput, verticalInput);
         toMove.Normalize();

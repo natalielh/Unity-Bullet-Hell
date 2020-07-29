@@ -13,11 +13,15 @@ public class playerFlip2 : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+		//Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 mousePos = Input.mousePosition;
+        Vector2 thisPos = Camera.main.WorldToScreenPoint(transform.position);
 
-		if (mousePos.x < transform.position.x) {
+        //if (mousePos.x < transform.position.x) {
+        if (mousePos.x < thisPos.x)
+        {
 
-			GetComponent<SpriteRenderer> ().flipX = true;
+            GetComponent<SpriteRenderer> ().flipX = true;
 
 		}
 
